@@ -9,13 +9,14 @@ const links = document.querySelectorAll(".links");
 lightBtn.forEach((e)=>{
     e.addEventListener("click", ()=>{
         const links = document.querySelectorAll(".links");
-        const skill = document.getElementById("skills")
-        body.classList.toggle("lightModeBody");
+        const skill = document.getElementById("skills");
+        const image = document.getElementById("homePageLogo")
+         body.classList.toggle("lightModeBody");
         skill.classList.toggle("lightModeBorder");
         links.forEach((e)=>{
             e.classList.toggle("lightMode");
         })
-        
+        image.toggleAttribute("./images/2.png");
     });
 })
 menuBtn.addEventListener("click", ()=>{

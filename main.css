@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Hedvig+Letters+Sans&display=swap');
 
 @keyframes upAndDown {
     from { transform: translateY(0px);}
@@ -11,6 +11,10 @@
 @keyframes slowBounce {
     from { transform: translateY(0);}
     to { transform: translateY(10px);}
+}
+@keyframes gradient {
+    from { background-position: left;}
+    to { background-position: right;}
 }
 *,*>*{
     padding: 0;
@@ -41,9 +45,10 @@ body{
     background: linear-gradient(90deg, rgba(255,215,0,1) 0%, rgba(0,0,0,1) 1%, rgba(0,0,0,1) 99%, rgba(255,215,0,1) 100%);
     color: white; 
     font-size: large;
-    font-family: "Source Sans 3", serif;
+    font-family: "Hedvig Letters Sans", serif;
     font-weight: 400;
     transition: 1s ease-in-out;
+
     z-index: 0;
 }
 .lightModeBody{
@@ -169,15 +174,18 @@ header .modeBtn{
 }
 .homePage .left{
     width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .homePage .left img{
     animation: memoji 1s linear .1s infinite alternate;
-    border-radius: 30%;
     box-shadow: 0 0 1rem gold;
-    transition: 1s ease-in-out;
+    transition: .5s ease-in-out;
+    width: 70%
 }
 .homePage .left img:hover{
-    box-shadow: 0 0 3rem gold;
+    transform: translateY(-5px);
 }
 .homePage .verticalLine{
     background-color: gold;
@@ -193,6 +201,11 @@ header .modeBtn{
 .homePage .right p{
     color: gold;
     margin: 2rem 0;
+    background-image: -webkit-linear-gradient(40deg, #eee, gold);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 400%;
+    animation: gradient 2s linear 1s infinite alternate;
 }
 .scroll{
     position: relative;
@@ -394,6 +407,9 @@ footer:hover{
     .aboutMeText{
         margin-left: 0;
     }
+    .contactPage{
+        margin-top: 9rem;
+    }
     footer .middle{
         display: flex;
         flex-direction: column;
@@ -406,6 +422,9 @@ footer:hover{
 @media (max-width: 530px) {
     body{
         padding: 0 .5rem;
+    }
+    .homePage .left{
+        width: 100%;
     }
     .skills img{
         width: 2rem;
