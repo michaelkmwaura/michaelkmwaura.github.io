@@ -315,6 +315,14 @@ header .modeBtn{
     width: 2rem;
     margin-right: 1rem;
 }
+.contactDiv .right h3 a{
+    color: white;
+    text-decoration: none;
+    transition: .3s ease-in-out;
+}
+.contactDiv .right h3 a:hover{
+    color: gold;
+}
 footer{
     margin-top: 10rem;
     height: 10rem;
@@ -354,6 +362,7 @@ footer:hover{
     }
     .homePage .right{
         padding-top: 1rem;
+        margin-left: 0;
     }
     .homePage .verticalLine{
         position: relative;
@@ -382,10 +391,16 @@ footer:hover{
         display: flex;
         justify-content: center;
     }
+    .aboutMeText{
+        margin-left: 0;
+    }
     footer .middle{
         display: flex;
         flex-direction: column;
         align-items: center;
+    }
+    footer{
+        height: fit-content;
     }
 }
 @media (max-width: 530px) {
@@ -397,6 +412,12 @@ footer:hover{
     }
     .contactPage{
         margin-top: 9rem;
+    }
+    .contactDiv{
+        justify-content: center;
+    }
+    .contactDiv .right h3{
+        width: 100%;
     }
     .contactDiv .left{
         display: none;
