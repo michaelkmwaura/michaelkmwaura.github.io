@@ -46,9 +46,6 @@ body{
     transition: 1s ease-in-out;
     z-index: 0;
 }
-.blur{
-    opacity: 0.1;
-}
 .lightModeBody{
     background: whitesmoke;
     background-image: linear-gradient(90deg, rgba(255,215,0,1) 0%, rgb(238, 238, 238) 1%, rgb(238, 238, 238) 99%, rgba(255,215,0,1) 100%);
@@ -73,6 +70,7 @@ header{
     padding: 1rem .5rem 1rem .5rem;
     position: fixed;
     backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     z-index: 10;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -106,7 +104,7 @@ header .menuBtn .second{
     width: 100vw;
     height: 100vh;
     backdrop-filter: blur(30px);
-    /* background-color: black; */
+    -webkit-backdrop-filter: blur(10px);
     z-index: 20;
     display: none;
     overflow-y: hidden;
@@ -144,9 +142,6 @@ header .menuBtn .second{
 .opacity .menu .links:hover{
     color: whitesmoke;
     transform: translateY(-5px);
-}
-.white{
-    
 }
 header .right .links, footer .links{
     color: white;
