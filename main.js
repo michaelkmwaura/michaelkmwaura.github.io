@@ -5,6 +5,8 @@ const menuLightBtn = document.getElementById("menuLightBtn");
 const menuCrossBtn = document.getElementById("menuCrossBtn");
 const opacity = document.getElementById("opacity");
 const links = document.querySelectorAll(".links");
+const image = document.getElementById("homePageLogo");
+console.log(image)
 
 lightBtn.forEach((e)=>{
     e.addEventListener("click", ()=>{
@@ -20,7 +22,8 @@ lightBtn.forEach((e)=>{
         gradient.forEach((e)=>{
             e.classList.toggle("lightPText")
         })
-        image.src === "http://127.0.0.1:3001/images/1.png" ? image.src="http://127.0.0.1:3001/images/2.png" : image.src = "http://127.0.0.1:3001/images/1.png";
+        image.src == "http://127.0.0.1:3001/images/1.png" ? image.setAttribute("src","./images/2.png") : image.setAttribute("src","./images/1.png");
+        console.log(image.src)
     });
 })
 menuBtn.addEventListener("click", ()=>{
