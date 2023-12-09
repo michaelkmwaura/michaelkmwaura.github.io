@@ -209,6 +209,10 @@ header .modeBtn{
 }
 .lightPText{
     background-image: -webkit-linear-gradient(40deg, goldenrod, gold) !important;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 400%;
+    animation: gradient 2s linear 2s infinite alternate;
 }
 .scroll{
     position: relative;
@@ -268,7 +272,6 @@ header .modeBtn{
     align-items: start;
     height: fit-content;
     flex-direction: column;
-    b
 }
 .projectDiv:hover .projectHeader{
     background-image: black;
