@@ -10,13 +10,17 @@ lightBtn.forEach((e)=>{
     e.addEventListener("click", ()=>{
         const links = document.querySelectorAll(".links");
         const skill = document.getElementById("skills");
-        const image = document.getElementById("homePageLogo")
-         body.classList.toggle("lightModeBody");
+        const image = document.getElementById("homePageLogo");
+        const gradient = document.querySelectorAll(".gradient");
+        body.classList.toggle("lightModeBody");
         skill.classList.toggle("lightModeBorder");
         links.forEach((e)=>{
             e.classList.toggle("lightMode");
         })
-        image.toggleAttribute("./images/2.png");
+        gradient.forEach((e)=>{
+            e.classList.toggle("lightPText")
+        })
+        image.src === "http://127.0.0.1:3001/images/1.png" ? image.src="http://127.0.0.1:3001/images/2.png" : image.src = "http://127.0.0.1:3001/images/1.png";
     });
 })
 menuBtn.addEventListener("click", ()=>{

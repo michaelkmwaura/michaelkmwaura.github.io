@@ -52,7 +52,7 @@ body{
     z-index: 0;
 }
 .lightModeBody{
-    background: whitesmoke;
+    background: ivory;
     background-image: linear-gradient(90deg, rgba(255,215,0,1) 0%, rgb(238, 238, 238) 1%, rgb(238, 238, 238) 99%, rgba(255,215,0,1) 100%);
     color: black;
 }
@@ -205,7 +205,10 @@ header .modeBtn{
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-size: 400%;
-    animation: gradient 2s linear 1s infinite alternate;
+    animation: gradient 2s linear 2s infinite alternate;
+}
+.lightPText{
+    background-image: -webkit-linear-gradient(40deg, goldenrod, gold) !important;
 }
 .scroll{
     position: relative;
@@ -240,13 +243,52 @@ header .modeBtn{
     display: flex;
     cursor: pointer;
     backdrop-filter: blur(5px);
-    transition: .3s ease-in-out;
+    transition: all .3s ease-in-out;
+    align-items: center;
 }
-.projectDiv:hover{
+.projectDiv .left{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+.projectDiv img{
+    display: none;
+    height: 100%;
+    width: 100%;
+    transform: translateX(-10rem);
+    opacity: 0;
+    transition: all 1s ease-in;
+}
+.projectDiv:hover,.projectDiv:focus{
     background-color: gold;
     border-style: solid none;
     color: black;
-    height: 12rem;
+    /* height: 12rem; */
+    align-items: start;
+    height: fit-content;
+    flex-direction: column;
+    b
+}
+.projectDiv:hover .projectHeader{
+    background-image: black;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: black;
+    background-size: 100%;
+    animation: none;
+}
+.projectDiv:hover img{
+    display: flex;
+    transform: translateX(0);
+    opacity: 1;
+    transition: opacity transform 1s ease-in;
+}
+.projectHeader{
+    background-image: -webkit-linear-gradient(40deg, #eee, gold);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 400%;
+    animation: gradient 2s linear 2s infinite alternate;
 }
 .aboutMe{
     height: 100vh;
@@ -271,6 +313,11 @@ header .modeBtn{
 .aboutMeText{
     margin-left: 2rem;
     font-size: large;
+    background-image: -webkit-linear-gradient(40deg, #eee, gold);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 400%;
+    animation: gradient 2s linear 2s infinite alternate;
 }
 .aboutMeText h3{
     text-align: center;
@@ -378,9 +425,7 @@ footer:hover{
         margin-left: 0;
     }
     .homePage .verticalLine{
-        position: relative;
-        width: 80%;
-        height: 2px;
+        display: none;
     }
     .scroll{
         top: 0;
@@ -422,6 +467,9 @@ footer:hover{
 @media (max-width: 530px) {
     body{
         padding: 0 .5rem;
+    }
+    .homePage{
+        padding-top: 10rem;
     }
     .homePage .left{
         width: 100%;
