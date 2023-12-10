@@ -5,14 +5,14 @@ const menuLightBtn = document.getElementById("menuLightBtn");
 const menuCrossBtn = document.getElementById("menuCrossBtn");
 const opacity = document.getElementById("opacity");
 const links = document.querySelectorAll(".links");
-const image = document.getElementById("homePageLogo");
-console.log(image)
+
 
 lightBtn.forEach((e)=>{
     e.addEventListener("click", ()=>{
         const links = document.querySelectorAll(".links");
         const skill = document.getElementById("skills");
-        const image = document.getElementById("homePageLogo");
+        const image1 = document.getElementById("lightLogo");
+        const image2 = document.getElementById("darkLogo")
         const gradient = document.querySelectorAll(".gradient");
         body.classList.toggle("lightModeBody");
         skill.classList.toggle("lightModeBorder");
@@ -22,15 +22,15 @@ lightBtn.forEach((e)=>{
         gradient.forEach((e)=>{
             e.classList.toggle("lightPText")
         })
-        image.src == "http://127.0.0.1:3001/images/1.png" ? image.setAttribute("src","./images/2.png") : image.setAttribute("src","./images/1.png");
-        console.log(image.src)
+        image1.classList.toggle("hide");
+        image2.classList.toggle("hide")
     });
 })
 menuBtn.addEventListener("click", ()=>{
     opacity.style.display = "block";
 });
 menuCrossBtn.addEventListener("click", ()=>{
-    opacity.style.display = "none"
+    opacity.style.display = "none";
 });
 links.forEach((e)=>{
     e.addEventListener("click",()=>{
