@@ -234,7 +234,7 @@ header .modeBtn{
     cursor: pointer;
 }
 .leftAni{
-    animation: fadeInLeftTitle 2s linear 0s forwards !important;
+    animation: fadeInLeftTitle 2s linear 0s forwards;
 }
 .rightAni{
     animation: fadeInRightTitle 2s linear 0s forwards
@@ -281,7 +281,7 @@ header .modeBtn{
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-size: 400%;
-    animation: gradient 2s linear 2s infinite alternate;
+    animation: gradient 2s linear 2s infinite alternate, fadeInLeftTitle 2s linear 0s forwards;
 }
 .lightPText{
     background-image: -webkit-linear-gradient(40deg, goldenrod, gold) !important;
@@ -342,7 +342,6 @@ header .modeBtn{
     background-color: gold;
     border-style: solid none;
     color: black;
-    /* height: 12rem; */
     align-items: start;
     height: fit-content;
     flex-direction: column;
