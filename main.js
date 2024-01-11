@@ -23,7 +23,7 @@ lightBtn.forEach((e)=>{
             e.classList.toggle("lightPText")
         })
         image1.classList.toggle("hide");
-        image2.classList.toggle("hide")
+        image2.classList.toggle("hide");
     });
 })
 menuBtn.addEventListener("click", ()=>{
@@ -51,6 +51,7 @@ const callbacks = (entries) => {
   });
 }
 let observer = new IntersectionObserver(callbacks, options);
+console.log(observer)
 elements.forEach(element => {
   observer.observe(element);
 });

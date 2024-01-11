@@ -332,36 +332,70 @@ header .modeBtn{
     margin: 1rem 0;
     display: flex;
     cursor: pointer;
-    backdrop-filter: blur(5px);
     transition: all .3s ease-in-out;
     align-items: center;
+}
+.projectDiv .switch{
+    position: relative;
+    display: flex; align-items: center;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+.projectsPage .switch .checkbox1{
+    opacity: 0;
+    width: 0;
+    height: 0;
 }
 .projectDiv .left{
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
+    margin-bottom: 1rem;
 }
-.projectDiv img{
+.projectDiv .mainImg{
     display: none;
-    height: 100%;
-    width: 100%;
+    height: 50%;
+    width: 20%;
     object-fit: cover;
 }
-.projectDiv:hover{
-    background-color: gold;
-    border-style: solid none;
-    color: black;
-    align-items: start;
-    height: fit-content;
-    flex-direction: column;
+.row{
+    display: flex;align-items: center;justify-content: center;
+    margin-bottom: .5rem;
 }
-.projectDiv:hover .projectHeader{
-    background-image: black;
+.projectDiv .picGrid{
+    display: none;
+}
+.checkbox1:checked + .projectDiv .picGrid .row img:hover{
+    width: 55%;
+    transition: .3s ease-in-out;
+}
+.checkbox1:checked + .projectDiv .picGrid .row img{
+    width: 50%;
+    height: 100%;
+    display: inline-block;
+}
+.checkbox1:checked + .projectDiv .picGrid{
+    display: inline-block;
+    width: 100%;
+}
+.projectDiv:hover{
+    background-color: rgba(255, 217, 0, 0.299);
+}
+.checkbox1:checked + .projectDiv{
+    background-color: rgba(255, 217, 0, 0.299);
+    border-style: solid none;
+    align-items: center;
+    flex-direction: column;
+    height: max-content;
+}
+.checkbox1:checked + .projectDiv .projectHeader{
+    background-image: -webkit-linear-gradient(40deg, #eee, gold);
     -webkit-background-clip: text;
-    -webkit-text-fill-color: black;
-    background-size: 100%;
-    animation: none;
+    -webkit-text-fill-color: transparent;
+    background-size: 400%;
+    animation: gradient 2s linear 2s infinite alternate;
 }
 .projectHeader{
     background-image: -webkit-linear-gradient(40deg, #eee, gold);
@@ -370,31 +404,40 @@ header .modeBtn{
     background-size: 400%;
     animation: gradient 2s linear 2s infinite alternate;
 }
-.projectDiv:hover .brief{
-    display: flex;
+.checkbox1:checked + .projectDiv .brief{
+    display: flex;flex-direction: column;
+    margin-bottom: 2rem;
+}
+.checkbox1:checked + .projectDiv .brief .text{
+    position: relative;
+    bottom: 3rem;
     width: 100%;
-    height: fit-content;
-}
-.projectDiv:hover .brief .text{
-    width: 50%;
-    height: fit-content;
-    position: absolute;
-    backdrop-filter: blur(100px);
-    background-color: black;
-    bottom: 0;
-    right: 0;
-    padding: 1rem;
-    animation: fadeInRight 1s linear forwards;
-}
-.textGradient{
-    background-image: -webkit-linear-gradient(40deg, black, gold);
+    font-weight: 400;
+    font-size: 25px;
+    backdrop-filter: blur(20px);
+    background-image: -webkit-linear-gradient(40deg, #eee, rgb(255, 191, 0));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-size: 400%;
-    animation: gradient 1s linear .1s infinite alternate;
+    animation: fadeInRight 1s linear forwards, gradient 2s linear 2s infinite alternate;
 }
-.projectDiv:hover .brief img{
+.projectDiv .brief .icons{
+    display:none;
+}
+.checkbox1:checked + .projectDiv .brief .icons img{
+    width: 100%;
+    height: 3rem;
+}
+.checkbox1:checked + .projectDiv .brief .icons{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 5rem;
+}
+.checkbox1:checked + .projectDiv .brief .mainImg{
     display: inline-block;
+    width: 100%;
+    height: 100%;
     animation: fadeInLeft 1s linear forwards;
 }
 .brief{
@@ -543,6 +586,16 @@ footer:hover{
     }
     .projectsPage{
         margin-top: 5rem;
+    }
+    .checkbox1:checked + .projectDiv .brief{
+        flex-direction: column;
+    }
+    .checkbox1:checked + .projectDiv .brief .text{
+        position: relative;
+        width: 100%;
+    }
+    .checkbox1:checked + .projectDiv .brief img{
+        width: 100%;
     }
     .skills{
         box-shadow: 0 0 2rem aliceblue;
