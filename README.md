@@ -1,3 +1,3 @@
 # michaelkmwaura.github.io
 
-## Testing...
+## Hello everyone, this is my personal portfolio website.
