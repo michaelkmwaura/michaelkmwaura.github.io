@@ -331,7 +331,6 @@ header .modeBtn{
     padding: 1rem;
     margin: 1rem 0;
     display: flex;
-    cursor: pointer;
     transition: all .3s ease-in-out;
     align-items: center;
 }
@@ -403,6 +402,30 @@ header .modeBtn{
     -webkit-text-fill-color: transparent;
     background-size: 400%;
     animation: gradient 2s linear 2s infinite alternate;
+    cursor: pointer;
+}
+.projectDiv .brief .projectLinks{
+    display: flex;align-items: center; justify-content: space-evenly;
+    margin-top: 1rem;
+}
+.projectDiv .brief .projectLinks .linkBtn{
+    width: max-content;
+    height: 4rem;
+    padding: 1rem 2rem 1rem 2rem;
+    display: flex;align-items: center;justify-content: center;
+    background: linear-gradient(to left, black 50%, gold 50%);
+    background: -webkit-linear-gradient(to left, black 50%, gold 50%);
+    background-size: 200%;
+    background-position: right;
+    color: white;
+    text-decoration: none;
+    transition: .3s ease-in-out;
+    border: 1px goldenrod;
+    border-style: solid none;
+}
+.projectDiv .brief .projectLinks .linkBtn:hover{
+    background-position: left;
+    color: black;
 }
 .checkbox1:checked + .projectDiv .brief{
     display: flex;flex-direction: column;
@@ -433,6 +456,7 @@ header .modeBtn{
     align-items: center;
     justify-content: space-evenly;
     height: 5rem;
+    transform: translateY(-3rem);
 }
 .checkbox1:checked + .projectDiv .brief .mainImg{
     display: inline-block;
